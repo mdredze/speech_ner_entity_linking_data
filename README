@@ -1,21 +1,33 @@
-This directory contains data collected for "Entity Linking for Spoken
-Language" (NAACL 2015, forthcoming).  Also included are all named entity
-annotations used for evaluation in "OOV Sensitive Named-Entity Recognition
-in Speech" (INTERSPEECH, 2011), of which a subset were annotated with
-knowledge base entities.  The utterances were drawn from the HUB4
+Authors:
+adrian dot benton at gmail dot com
+mark at dredze dot com
+
+This distribution contains named entity tagged and entity linked speech data.
+
+The named entity data was annotated as described in this paper:
+Carolina Parada, Mark Dredze, Frederick Jelinek. OOV Sensitive Named-Entity
+Recognition in Speech. International Speech Communication Association (INTERSPEECH), 2011.
+
+A subset of the person entities in this dataset were annotated for
+entity linking information as described in this paper:
+Adrian Benton, Mark Dredze. Entity Linking for Spoken Language. 
+North American Chapter of the Association for Computational Linguistics (NAACL), 2015.
+
+The utterances were drawn from the HUB4
 dataset https://catalog.ldc.upenn.edu/LDC98S71 , and the knowledge base is
 the same Wikipedia dump used in the TAC 2009 KBP track.
 
-"folds.txt": Mapping from each entity linking query ID to fold
+This distribution includes the annotations only. The HUB4 data must be obtained
+from the LDC.
 
-"el_queries.txt": Entity linking queries.  Format:
+The files contain the following:
+- "folds.txt": Mapping from each entity linking query ID to fold
+
+- "el_queries.txt": Entity linking queries.  Format:
     QUERY_ID ENTITY_MENTION HUB4_UTTERANCE_ID ENTITY_TYPE KB_ID
 
-"ne_el_labels.txt": All named entities annotated in the HUB4 transcripts.
-Any entity that does not have an linking annotation to the Wikipedia KB
+- "ne_el_labels.txt": All named entities annotated in the HUB4 transcripts.
+
+Any entity that does not have a linking annotation to the Wikipedia KB
 is marked as "NOT_ANNOTATED".  Format:
     HUB4_UTTERANCE_ID ENTITY_MENTION START_SPAN END_SPAN ENTITY_TYPE KB_ID
-
-If you have any questions, please send them to:
-
-adrian dot benton at gmail dot com
